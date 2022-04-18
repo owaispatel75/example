@@ -1,4 +1,4 @@
-// ignore_for_file: unrelated_type_equality_checks, avoid_types_as_parameter_names, non_constant_identifier_names, camel_case_types
+// ignore_for_file: unrelated_type_equality_checks, avoid_types_as_parameter_names, non_constant_identifier_names
 
 class address {
   // Map<String, dynamic>? addresses = {};

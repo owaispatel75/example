@@ -25,6 +25,7 @@ class _ShipmentDataState extends State<ShipmentData> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
           backgroundColor: Colors.amber,
         ),
@@ -43,8 +44,8 @@ class _ShipmentDataState extends State<ShipmentData> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.only(left: 20, top: 20),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, top: 20),
                       child: Text(
                         "SHIPMENT",
                         // textAlign: TextAlign.left,
@@ -54,13 +55,13 @@ class _ShipmentDataState extends State<ShipmentData> {
                             color: Color.fromARGB(199, 26, 26, 26)),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 15,
                     ),
                     SingleChildScrollView(
                       controller: ScrollController(),
                       child: Container(
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                             border: Border(
                                 top: BorderSide(
                                     width: 1.0, color: Colors.black26))),
@@ -72,6 +73,7 @@ class _ShipmentDataState extends State<ShipmentData> {
                                     dataRowHeight: 45,
                                     //  dividerThickness: 2,
                                     columnSpacing: 20,
+
                                     //
                                     horizontalMargin: 20,
                                     minWidth: 600,

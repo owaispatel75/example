@@ -1,12 +1,12 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, unnecessary_new, prefer_const_constructors, curly_braces_in_flow_control_structures, must_be_immutable, prefer_const_constructors_in_immutables, unused_field, camel_case_types, use_key_in_widget_constructors, avoid_unnecessary_containers, unused_local_variable, avoid_print
 
+
+import 'package:gcg_ec/model/categoryApi.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:async';
-
-import '../../model/categoryApi.dart';
-import '../../model/storeid.dart';
+import 'package:http/http.dart' as http;
 
 var _selectedPageIndex;
 late List<Widget> _pages;
@@ -21,48 +21,34 @@ class sidemenu extends StatefulWidget {
   _sidemenuState createState() => new _sidemenuState();
 }
 
+
 class _sidemenuState extends State<sidemenu> {
   late Future<List<categoryApi>> _responseFuture;
 
-  Future<List<categoryApi>> fetchUsers() async {
-    var url = "http://172.29.1.208:2016/api/Categories?storeid=11";
-    var response = await Dio().get(url);
-    if (response.statusCode == 200) {
-      var getUsersData = response.data as List;
-      List<categoryApi> listUsers = [];
-      for (var i in getUsersData) {
-        if (i != null) {
-          listUsers.add(categoryApi.fromJson(i));
-        }
-      }
-      return listUsers;
-    } else {
-      throw Exception('Failed to load users');
-    }
-  }
+Future<List<categoryApi>> fetchUsers() async {
+  var url = "http://172.29.1.208:2016/api/Categories?storeid=11";
+  var response = await Dio().get(url);
+  if (response.statusCode == 200) {
+    var getUsersData = response.data as List;
 
-  late Future<List<ProductId>> productStoreData;
-  var productList;
-  Future<List<ProductId>> fetchProducts() async {
-    var url = "http://172.29.1.208:2016/api/products?storeid=11";
-    var response = await Dio().get(url);
-    if (response.statusCode == 200) {
-      var getUsersData = response.data as List;
-      productList = getUsersData.map((i) {
-        return ProductId.fromJson(i);
-      }).toList();
-      return productList;
-    } else {
-      throw Exception('Failed to load users');
-    }
-  }
+    List<categoryApi> listUsers = [];
 
+    for (var i in getUsersData) {
+     if(i != null){
+        listUsers.add(categoryApi.fromJson(i));
+     }
+    }
+
+    return listUsers;
+  } else {
+    throw Exception('Failed to load users');
+  }
+}
   @override
   void initState() {
     print("initstate");
     super.initState();
     _responseFuture = fetchUsers();
-    productStoreData = fetchProducts();
     _selectedPageIndex = 0;
     _pages = [
       // it is important to keep these indices number so you will find it easier to reference them whne you want to open them
@@ -101,7 +87,7 @@ class _sidemenuState extends State<sidemenu> {
           physics: NeverScrollableScrollPhysics(),
           children: _pages,
         ),
-        drawer: createDrawer(context, _responseFuture, productStoreData),
+        drawer: createDrawer(context,_responseFuture),
       ),
     );
   }
@@ -195,9 +181,9 @@ class _sidemenuState extends State<sidemenu> {
 //}
 
 Widget createDrawer(
-    BuildContext context,
-    Future<List<categoryApi>> _responseFuture,
-    Future<List<ProductId>> productData) {
+    BuildContext context, Future<List<categoryApi>> _responseFuture)
+
+ {
   final _controller = ScrollController();
 
   return Drawer(
@@ -211,19 +197,6 @@ Widget createDrawer(
               if (snapshot.hasData) {
                 var json = snapshot.data!;
                 return MyExpansionTileList(elementList: json);
-              } else {
-                return const Center(
-                  child: Text('Loading...'),
-                );
-              }
-            },
-          ),
-          FutureBuilder<List<ProductId>>(
-            future: productData,
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                var json = snapshot.data!;
-                return MyExpansionTileList1(elementList: json);
               } else {
                 return const Center(
                   child: Text('Loading...'),
@@ -247,20 +220,13 @@ class MyExpansionTileList extends StatefulWidget {
   State<StatefulWidget> createState() => _DrawerState();
 }
 
-class MyExpansionTileList1 extends StatefulWidget {
-  late BuildContext context;
-  final List<ProductId> elementList;
-
-  MyExpansionTileList1({required this.elementList});
-
-  @override
-  State<StatefulWidget> createState() => _DrawerState1();
-}
-
 class _DrawerState extends State<MyExpansionTileList> {
+  // You can ask Get to find a Controller that is being used by another page and redirect you to it.
+  // final Controller c = Get.find();
+
   List<Widget> _getChildren(final List<categoryApi> elementList) {
-    int selected = 0;
     List<Widget> children = [];
+    int selected = 0;
     final subMenuChildren = <Widget>[];
     try {
       for (var i = 0; i < elementList.length; i++) {
@@ -275,6 +241,7 @@ class _DrawerState extends State<MyExpansionTileList> {
           onTap: () => {
             setState(() {
               print("The item clicked is " + elementList[i].name.toString());
+
               // switch (element['children'][i]['state']) {
               //   case '/fund-type':
               //     //setting current index and opening a new screen using page controller with animations
@@ -355,95 +322,6 @@ class _DrawerState extends State<MyExpansionTileList> {
   Widget build(BuildContext context) {
     return new Column(
       children: _getChildren(widget.elementList),
-    );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-  }
-}
-
-class _DrawerState1 extends State<MyExpansionTileList1> {
-  List<Widget> _getChildren1(final List<ProductId> elementList) {
-// ----------------------------------------------------
-    var name = {};
-    // var name1 = <dynamic, dynamic>{};
-    var name2 = <dynamic, dynamic>{};
-
-    for (ProductId item in elementList) {
-      if (item.attributes!.isNotEmpty &&
-          item.attributes![0].values![0].name != "Inkjet" &&
-          item.attributes![0].values![0].name != "Laser" &&
-          item.attributes![0].values!.isNotEmpty) {
-        name[item.attributes![0].values![0].valuedisplayorder] =
-            item.attributes![0].values![0].name;
-      }
-
-      for (var attrItems in item.attributes!) {
-        // name2[attrItems.name] =
-        //     attrItems.values![0].name;
-
-        print(attrItems.values![0].name);
-      }
-    }
-
-    Map<dynamic, dynamic> sorting(Map<dynamic, dynamic> value) {
-      return Map.fromEntries(
-          value.entries.toList()..sort((e1, e2) => e1.key.compareTo(e2.key)));
-    }
-
-    // name1 = sorting(name1);
-
-    name = sorting(name);
-    print(name);
-    // print(name1);
-    print(name2);
-
-// ----------------------------------------------------
-
-    List<Widget> children = [];
-    int selected = 0;
-    final subMenuChildren = <Widget>[];
-    try {
-      // for (var value in name1.values) {
-      //   children.add(
-      //     ExpansionTile(
-      //       title: Text(
-      //         "$value",
-      //         style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
-      //       ),
-      //       children: subMenuChildren,
-      //     ),
-      //   );
-
-      //   if (value == "Toner Color") {
-      //     for (var v in name.values) {
-      //       subMenuChildren.add(new ListTile(
-      //         onTap: () => {},
-      //         title: Text(
-      //           "$v",
-      //           style: TextStyle(fontWeight: FontWeight.w700),
-      //         ),
-      //         trailing: Text(
-      //           "",
-      //         ),
-      //       ));
-      //     }
-      //   } else {
-      //     subMenuChildren;
-      //   }
-      // }
-    } catch (err) {
-      print('Caught error: $err');
-    }
-    return children;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return new Column(
-      children: _getChildren1(widget.elementList),
     );
   }
 

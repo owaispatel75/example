@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gcg_ec/model/orders.dart';
 import 'package:gcg_ec/pages/dashboard.dart';
 import 'package:gcg_ec/pages/enquiry.dart';
-import 'package:gcg_ec/pages/filter.dart';
 import 'package:gcg_ec/pages/salesOrderpage.dart';
 import 'package:gcg_ec/pages/shipingdata.dart';
+import 'package:gcg_ec/pages/sidemenu/sidemenu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
             .copyWith(secondary: const Color.fromARGB(255, 229, 147, 147)),
       ),
        home: 
-       SalesOredrPage()
+       SalesOredrPage(),
         // productStoreData(),
 // VerticalTabs(
 //   tabsWidth: 150,

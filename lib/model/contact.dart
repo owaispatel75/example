@@ -6,20 +6,19 @@ class Contactapi {
   Contactapi.fromJson(dynamic json) {
     if (json != null) {
       contacts = <Contacts>[];
-      for (var v in (json as List)) {
+      json.forEach((v) {
         contacts!.add(Contacts.fromJson(v));
-      }
+      });
     }
   }
 
-  // Map<String, dynamic> toJson() {
-  //   final Map<String, dynamic> data = <String, dynamic>{};
-  //   if (contacts != null) {
-  //     data['contacts'] = contacts!.map((v) => v.toJson()).toList();
-  //   }
-  //   return data;
-  // }
-
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (contacts != null) {
+      data['contacts'] = contacts!.map((v) => v.toJson()).toList();
+    }
+    return data;
+  }
 }
 
 class Contacts {

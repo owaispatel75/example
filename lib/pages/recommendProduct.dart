@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gcg_ec/pages/detailPages/detailPage.dart';
 import '../constant.dart';
 import '../model/product.dart';
 import 'productCard.dart';
@@ -32,13 +31,13 @@ class RecommandProducts extends StatelessWidget {
 
               product: products![index],
               press: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DetailsPage(
-                         item: products![index],
-                      ),
-                    ));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => DetailsScreen(
+                //         product: products[index],
+                //       ),
+                //     ));
               }),
         ),
       ),

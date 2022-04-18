@@ -112,7 +112,7 @@ class childrenApi {
     recommendation = json['Recommendation'];
     items = json['items'];
     if ((json['children'] as List).isNotEmpty) {
-      children = [];
+      children = [] as List;
       for (var v in (json['children'] as List)) {
         children.add((v));
       }

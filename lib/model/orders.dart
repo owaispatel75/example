@@ -1,4 +1,4 @@
-// ignore_for_file: unrelated_type_equality_checks, camel_case_types
+// ignore_for_file: unrelated_type_equality_checks
 
 class orderapi {
   List<Orders>? orders;
@@ -16,7 +16,7 @@ class orderapi {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    if (orders != null) {
+    if (orders != dynamic) {
       data['orders'] = orders!.map((v) => v.toJson()).toList();
     }
     return data;

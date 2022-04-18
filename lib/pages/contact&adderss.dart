@@ -8,6 +8,7 @@ import '../model/user.dart';
 
 class Contact_Address extends StatefulWidget {
   const Contact_Address({Key? key}) : super(key: key);
+
   @override
   State<Contact_Address> createState() => _Contact_AddressState();
 }
@@ -18,6 +19,7 @@ class _Contact_AddressState extends State<Contact_Address> {
     var data = "http://172.29.1.208:2016/api/CustomerDetails/47";
     var api = getData();
     var apiData = api.fetchUsers(data);
+
     return Container(
       margin: const EdgeInsets.all(20),
       child: Column(children: [
@@ -34,7 +36,7 @@ class _Contact_AddressState extends State<Contact_Address> {
               future: apiData,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                return  Column(
+                 return  Column(
                     children:  [
                       ListTile(
                         title: Text('SR.NO : ${snapshot.data![0].userProfile.storeId}'),
