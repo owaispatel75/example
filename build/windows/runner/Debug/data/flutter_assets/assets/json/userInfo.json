@@ -1,0 +1,252 @@
+[
+  {
+    "profile": {
+      "Customer_Id": 47,
+      "FirstName": "Oracle",
+      "LastName": "Test",
+      "Email": "oracleTest@gmail.com",
+      "Password": "Iqra@123",
+      "Phone": null,
+      "CUST_STATUS": null,
+      "Deleted": false,
+      "CUSTOMER_CREATION_DATE": "Mar 29 2009  4:36PM",
+      "CUSTOMER_UPDATE_DATE": "",
+      "DOB": "",
+      "Istaxexempt": false,
+      "CUSTOMER_NAME": "Oracle Company",
+      "REMARKS1": "<p>Oracle Customer</p>",
+      "Store_Id": 11,
+      "CUSTOMER_NUMBER": "1116",
+      "EAUTO_CUSTOMERID": 14104,
+      "EAUTO_CUST_NUMBER": "1116_16067",
+      "EAUTO_CUSTOMER_NAME": "Concept Flexible Packaging LLC",
+      "EAUTO_LOCATION_ID": 16067,
+      "TERM_ID": 1007,
+      "TERM_NAME": "60-PDC",
+      "TERM_DESCRIPTION": "60 DAYS  POST DATED CHEQUE",
+      "TAX_NUMBER": "100049155300003",
+      "TAX_CODE": null,
+      "TAX_NAME": "GTI-VAT-TAX",
+      "TAX_REGIME_CODE": "GTI-VAT-REGIME",
+      "CREDIT_HOLD_STATUS": "1 - OnHold : No Service",
+      "TERRITORY": "Middle East.AE.NE - RAK",
+      "TERRITORY_ID": 12013,
+      "PRIMARY_SALESREP_ID": 100017042,
+      "SALES_PERSON": "Nabeel(1438)",
+      "Existing_Customer": true,
+      "TRADE_LICENCE_NO": null,
+      "CUSTOMER_SECTOR": null,
+      "CUSTOMER_TYPE": null
+    },
+    "contacts": [
+      {
+        "ContactId": 27,
+        "Customer_ID": 47,
+        "FirstName": "oracel Fname",
+        "LastName": "Oracel Lname",
+        "SITE_CONTACT_PERSON_EMAIL": null,
+        "Password": "Iqra@123",
+        "SITE_CONTACT_PERSON_PHONE": null,
+        "AdminComment": null,
+        "IsActive": null,
+        "SITE_CONTACT_PER_LAST_UPD_DATE": null,
+        "UpdatedBy": null,
+        "CreatedBy": null,
+        "CreatedAt": ""
+      }
+    ],
+    "addresses": [
+      {
+        "CustomerAddress_Id": 123,
+        "CustomerId": 47,
+        "IsDefault": true,
+        "FirstName": "Billing",
+        "LastName": "Address",
+        "Email": "billto@gmail.com",
+        "Company": "oracle Company",
+        "COUNTRY": "United Arab Emirates",
+        "STATE": null,
+        "CITY": "Ras Al Khaimah",
+        "Street": null,
+        "Apartment": null,
+        "POSTAL_CODE": "041931",
+        "PhoneNumber": "123456",
+        "ADDRESS1": "P. O. Box - 041931",
+        "ADDRESS2": "Plot No. 313",
+        "ADDRESS3": "Al Ghail Industrial Park",
+        "SITE_CODE": "41727",
+        "SITE_USE_ID": 94191,
+        "SITE_USE_STATUS": "A",
+        "LOCATION_ID": 16067,
+        "LOCATION_CODE": "94192",
+        "CUSTOMER_NUMBER": "1116",
+        "CUST_SITE_USES_UPDATE_DATE": "Jan 29 2019 12:35PM",
+        "SITE_USE_CODE": "BILL_TO",
+        "Existing_Customer": true,
+        "Company_Website": "www.BiillTooracelCompany.com",
+        "O_CUST_STATUS": "A",
+        "CREDIT_LIMIT": null,
+        "CREDIT_HOLD": null,
+        "CREDIT_CHECK": null,
+        "COLLECTOR": null,
+        "EAUTO_LOCATION_ID": null,
+        "REMARKS1": null,
+        "Address": "oracle Company, \n, , \nRas Al Khaimah, 041931, \n, United Arab Emirates"
+      },
+      {
+        "CustomerAddress_Id": 124,
+        "CustomerId": 47,
+        "IsDefault": true,
+        "FirstName": "Shipping",
+        "LastName": "Address",
+        "Email": "shipto@gmail.com",
+        "Company": "oracle company",
+        "COUNTRY": "United Arab Emirates",
+        "STATE": null,
+        "CITY": "Ras Al Khaimah",
+        "Street": null,
+        "Apartment": null,
+        "POSTAL_CODE": null,
+        "PhoneNumber": "123456",
+        "ADDRESS1": "P. O. Box - 41931",
+        "ADDRESS2": "Plot No. 313",
+        "ADDRESS3": "Al Ghail Industrial Park",
+        "SITE_CODE": "41727",
+        "SITE_USE_ID": 94193,
+        "SITE_USE_STATUS": "A",
+        "LOCATION_ID": 16067,
+        "LOCATION_CODE": "94194",
+        "CUSTOMER_NUMBER": "1116",
+        "CUST_SITE_USES_UPDATE_DATE": "Jul 20 2016  4:14PM",
+        "SITE_USE_CODE": "SHIP_TO",
+        "Existing_Customer": true,
+        "Company_Website": null,
+        "O_CUST_STATUS": "A",
+        "CREDIT_LIMIT": null,
+        "CREDIT_HOLD": null,
+        "CREDIT_CHECK": null,
+        "COLLECTOR": null,
+        "EAUTO_LOCATION_ID": null,
+        "REMARKS1": null,
+        "Address": "oracle company, \n, , \nRas Al Khaimah, , \n, United Arab Emirates"
+      },
+      {
+        "CustomerAddress_Id": 258,
+        "CustomerId": 47,
+        "IsDefault": null,
+        "FirstName": "Extra",
+        "LastName": "Address",
+        "Email": null,
+        "Company": null,
+        "COUNTRY": null,
+        "STATE": null,
+        "CITY": null,
+        "Street": null,
+        "Apartment": null,
+        "POSTAL_CODE": null,
+        "PhoneNumber": null,
+        "ADDRESS1": null,
+        "ADDRESS2": null,
+        "ADDRESS3": null,
+        "SITE_CODE": null,
+        "SITE_USE_ID": null,
+        "SITE_USE_STATUS": null,
+        "LOCATION_ID": null,
+        "LOCATION_CODE": null,
+        "CUSTOMER_NUMBER": null,
+        "CUST_SITE_USES_UPDATE_DATE": "",
+        "SITE_USE_CODE": "SHIP_TO",
+        "Existing_Customer": true,
+        "Company_Website": null,
+        "O_CUST_STATUS": "A",
+        "CREDIT_LIMIT": null,
+        "CREDIT_HOLD": null,
+        "CREDIT_CHECK": null,
+        "COLLECTOR": null,
+        "EAUTO_LOCATION_ID": null,
+        "REMARKS1": null,
+        "Address": ", \n, , \n, , \n, "
+      }
+    ],
+    "orders": [
+      {
+        "Order_Id": 141,
+        "OrderNumber": 141,
+        "OrderDate": "2022-1-27",
+        "OrderStatus": "Pending",
+        "ShippingCost": 25.0,
+        "TaxAmount": 0.0,
+        "TaxRatePercent": 5.0,
+        "PaymentStatus": "Pending",
+        "items": [
+          {
+            "Product_Id": 249,
+            "slug": "ecosysp6230cdn-249",
+            "Name": "ECOSYS P6230cdn",
+            "ImagePath": null,
+            "O_DESCRIPTION": "ECOSYS P6230cdn-A4 Colour Printer, 30/30pm, 600 dpi multibit, 2-line LCD, with starter toners",
+            "Price": null,
+            "Quantity": 1,
+            "total": null
+          }
+        ],
+        "TotalItems": 1,
+        "additionalLines": {
+          "comment": "hello additionalLines is filled with user comment"
+        },
+        "OrderTotal": 20.0,
+        "SubTotal": 0.0,
+        "PaymentMethodSystemName": "COD",
+        "shippingAddress": [
+          {
+            "FirstName": "Shipping",
+            "LastName": "Address",
+            "Email": "shipto@gmail.com",
+            "Company": "oracle company",
+            "PhoneNumber": "123456",
+            "COUNTRY": "United Arab Emirates",
+            "STATE": null,
+            "CITY": "Ras Al Khaimah",
+            "Street": null,
+            "Apartment": null,
+            "POSTAL_CODE": null,
+            "SITE_USE_CODE": "SHIP_TO"
+          }
+        ],
+        "billingAddress": [
+          {
+            "FirstName": "Billing",
+            "LastName": "Address",
+            "Email": "billto@gmail.com",
+            "Company": "oracle Company",
+            "PhoneNumber": "123456",
+            "COUNTRY": "United Arab Emirates",
+            "STATE": null,
+            "CITY": "Ras Al Khaimah",
+            "Street": null,
+            "Apartment": null,
+            "POSTAL_CODE": "041931",
+            "SITE_USE_CODE": "BILL_TO"
+          }
+        ],
+        "shipment": [
+          {
+            "address":"india" 
+          }
+        ],
+        "InvoiceNumber": "141",
+        "InvoiceDate": "Feb 12 2022 12:03PM"
+      }
+    ],
+    "invoices": [
+      {
+        "price": 100
+      }
+    ],
+    "O_Shipment": [
+      {
+        "o_shipment": "maharashtra"
+      }
+    ]
+  }
+]

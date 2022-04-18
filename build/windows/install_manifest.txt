@@ -1,0 +1,10 @@
+E:/flutterlearning/gcg/build/windows/runner/Debug/data/icudtl.dat
+E:/flutterlearning/gcg/build/windows/runner/Debug/flutter_windows.dll
+E:/flutterlearning/gcg/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+E:/flutterlearning/gcg/build/windows/runner/Debug/data/flutter_assets/assets/json/userInfo.json
+E:/flutterlearning/gcg/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+E:/flutterlearning/gcg/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+E:/flutterlearning/gcg/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+E:/flutterlearning/gcg/build/windows/runner/Debug/data/flutter_assets/NOTICES
+E:/flutterlearning/gcg/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+E:/flutterlearning/gcg/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf

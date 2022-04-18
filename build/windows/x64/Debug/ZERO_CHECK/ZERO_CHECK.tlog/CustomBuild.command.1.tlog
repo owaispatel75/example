@@ -1,0 +1,10 @@
+^E:\FLUTTERLEARNING\GCG\BUILD\WINDOWS\CMAKEFILES\EB0CC0EC540273E9AF38FAB6C1482084\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SE:/flutterlearning/gcg/windows -BE:/flutterlearning/gcg/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/flutterlearning/gcg/build/windows/gcg.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
